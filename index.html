@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e6fcf5;
+        /*
+        background-image: url("cb.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+      }
+      /* ... (existing styles) ... */
+
+      .message-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+
+      .my-message {
+        background-color: #007bff;
+        color: white;
+        border-radius: 10px;
+        padding: 8px 12px;
+        max-width: 70%;
+        word-wrap: break-word;
+        margin-left: auto;
+      }
+
+      .other-message {
+        background-color: #f9f9f9;
+        color: #333;
+        border-radius: 10px;
+        padding: 8px 12px;
+        max-width: 70%;
+        word-wrap: break-word;
+        margin-right: auto;
+      }
+
+      nav {
+        background-color: hsl(0, 100%, 95%);
+        color: white;
+        padding: 10px;
+      }
+
+      .logo {
+        width: 100px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        /* background-color: #e5dbff; */
+        box-shadow: 0px 20px 30px 0 rgb(0, 0, 0, 0.04);
+        overflow-y: scroll;
+        max-height: 300px;
+      }
+
+      .send {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .send input[type="text"] {
+        flex: 1;
+        padding: 5px;
+      }
+
+      .send button {
+        padding: 5px 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 232, 204, 0.7);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: rgb(245, 139, 52);
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .close:hover {
+        color: red;
+      }
+    </style>
+    <!-- <script src="http://127.0.0.1:5000/socket.io/socket.io.js"></script> -->
+    <script src="client.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- ... (previous HTML content) ... -->
+
+  <body>
+    <nav><img class="logo" src="cc.jpg" alt="" /></nav>
+    <div class="container" id="messagesContainer">
+      <!-- Messages will be displayed here -->
+    </div>
+
+    <div class="send">
+      <form action="#" id="send-container">
+        <input
+          type="text"
+          name="messageInp"
+          id="messageInp"
+          placeholder="Write Your Message"
+        />
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+
+    <div id="nameModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Welcome to the Chat App!</h2>
+        <p>Please enter your name:</p>
+        <input type="text" id="usernameInput" placeholder="Enter your name" />
+        <button id="submitUsername">Submit</button>
+      </div>
+    </div>
+  </body>
+</html>
