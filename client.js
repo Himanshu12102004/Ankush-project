@@ -1,4 +1,4 @@
-const socket = new WebSocket("ws://localhost:3000"); // Change URL if needed
+const socket = new WebSocket("https://gdsc-project-0mb7.onrender.com"); // Change URL if needed
 
 const messagesContainer = document.getElementById("messagesContainer");
 const messageInput = document.getElementById("messageInp");
